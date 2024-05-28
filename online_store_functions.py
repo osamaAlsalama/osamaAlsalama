@@ -110,6 +110,8 @@ def clear_cart():
     view_cart()
     choice = input('are you sure to clear cart(y,n): ')
     if choice == "y".lower():
+        for item in cart:
+            items[item]['quantity']+=cart[item]['quantity']
         cart.clear()
         print('the cart cleared')
     elif choice == "n".lower():
